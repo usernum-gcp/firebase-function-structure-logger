@@ -48,8 +48,8 @@ This example has the default sample function. To use this example as a starter p
 
 1. `npm install -g firebase-tools`
 3. Create a Firebase Project using the Firebase Developer Console
-2. Download the source code of this sample: `git clone https://github.com/firebase/functions-samples`
-4. Enter the right sample directory: `cd functions-samples/typescript-getting-started`
+2. Download the source code of this sample: `git clone https://github.com/usernum-gcp/firebase-function-structure-logger`
+4. Enter the right sample directory: `cd firebase-function-structure-logger`
 5. Configure this project to use the Firebase project you have created: `firebase use --add` and select your project in the list.
 6. Install the dependencies and deploy
    ```
@@ -57,10 +57,13 @@ This example has the default sample function. To use this example as a starter p
    npm install
    npm run deploy
    ```
+   or to deploy the function use the following:
+   firebase deploy --only functions:log4bingo
 
 > With TypeScript you need to build the JavaScript files before deploying, so an npm script does this steps.  You can see this script and a few other handy shortcuts in [package.json](functions/package.json). Also a pre-deploy trigger ensures that the code is always transpiled before deploying. You can see this in [firebase.json](firebase.json).
 
-After the deploy is complete, you will see the output by sending a request to the URL of your Cloud Function endpoint. You can test the function with curl.  The following command will work with any project, since the output of `firebase use` is the current project ID:
-```
-curl https://us-central1-$(firebase use).cloudfunctions.net/helloWorld
-```
+After the deploy is complete, you will see the output by sending a request to the URL of your Cloud Function endpoint. You can test the function with curl. 
+
+to see the log you can either open the Stackdriver Looger dashboard or to run in the shell the following:
+firebase functions:log --only log4bingo
+
