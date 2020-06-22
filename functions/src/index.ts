@@ -78,7 +78,8 @@ export const log4bingo = functions.https.onRequest((request, response) => {
  * than simply relying on console.error. This will calculate users affected + send you email
  * alerts, if you've opted into receiving them.
  */
-
+//"build": "./node_modules/.bin/tsc",
+//
 // [START reporterror]
 function reportError(logging, err, context = {}) {
   // This is the name of the StackDriver log stream that will receive the log
